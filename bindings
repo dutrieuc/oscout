@@ -1,0 +1,6 @@
+# FZF bound actions 
+enter:execute(${OSCOUT_EDITCMD})+accept
+change:reload(source ./run_utils.sh; reload_command {q};)
+alt-p:reload(source ./run_utils.sh; toggle_type py; reload_command {q};)
+alt-l:reload(source ./run_utils.sh; toggle_type xml; reload_command {q};)
+alt-j:reload(source ./run_utils.sh; toggle_type js; reload_command {q};)
