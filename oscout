@@ -1,11 +1,11 @@
 #!/bin/sh
-source $HOME/.config/oscout/env_var.sh
+SCRIPT_PATH=$(readlink -f "$0")
+OSCOUT_INSTALL_PATH=$(dirname "$SCRIPT_PATH")
 export PATH="$OSCOUT_INSTALL_PATH/src:$PATH"
 source $OSCOUT_INSTALL_PATH/env_var.sh
 source $HOME/.config/oscout/env_var.sh
 
 binding_file=$(get_first_file "$HOME/.config/oscout/bindings" "${OSCOUT_INSTALL_PATH}/bindings")
-
 
 (echo $(get_header)) | fzf --phony --delimiter ':' --ansi \
     --header-lines=2  \
