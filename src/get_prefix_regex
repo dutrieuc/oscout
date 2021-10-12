@@ -4,5 +4,5 @@ if [[ ${#SEARCH_PREFIX[@]} -eq 0 ]]
 then
     exit
 fi
-s="($(prefix_list ${SEARCH_PREFIX[@]} ))\s*=?\s*('|\\\")?"
+s="($(prefix_list ${SEARCH_PREFIX[@]} ))\s*=?\s*(\\\{|\\\[)?\s*('|\\\")?"
 echo $s
