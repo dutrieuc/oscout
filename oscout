@@ -1,23 +1,12 @@
 #!/bin/sh
-. ./utils.sh
-. ./run_utils.sh
-. ./env_var.sh
-# ~/.config/oscout/env_var.sh
+source ./utils.sh
+source ./run_utils.sh
+source ./env_var.sh
 
-# source user var and scripts
-
-# write function instead of var to define reload default from environment
-export OSCOUT_RUN_UTILS=./run_utils.sh
 binding_file=$(get_first_file ~/.config/oscout/bindings ./bindings)
 
-export ARGS=$@
-export OSCOUT_HEADER="Looking in ${OSCOUT_PATHS}"
-export OSCOUT_SEARCH_TYPES=()
-export OSCOUT_RG_TYPE_FILTER=""
-
-
-(echo $OSCOUT_HEADER) | fzf --phony --delimiter ':' --ansi \
-    --header-lines=1  \
+(echo $(get_header)) | fzf --phony --delimiter ':' --ansi \
+    --header-lines=2  \
     --bind "$(get_bindings $binding_file | envsubst)" \
     --preview 'highlight_line={2} \
         line_range_begin=$((line = highlight_line - (FZF_PREVIEW_LINES / 4) && line < 1 ? 1 : line)) \

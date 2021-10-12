@@ -1,6 +1,10 @@
 # FZF bound actions 
 enter:execute(${OSCOUT_EDITCMD})+accept
 change:reload(source ./run_utils.sh; reload_command {q};)
-alt-p:reload(source ./run_utils.sh; toggle_type py; reload_command {q};)
-alt-l:reload(source ./run_utils.sh; toggle_type xml; reload_command {q};)
-alt-j:reload(source ./run_utils.sh; toggle_type js; reload_command {q};)
+alt-p:execute-silent(source ./run_utils.sh; toggle py type;)+reload(source ./run_utils.sh; reload_command {q};)
+alt-x:execute-silent(source ./run_utils.sh; toggle xml type;)+reload(source ./run_utils.sh; reload_command {q};)
+alt-j:execute-silent(source ./run_utils.sh; toggle js type;)+reload(source ./run_utils.sh; reload_command {q};)
+alt-D:execute-silent(source ./run_utils.sh; toggle def prefix;)+reload(source ./run_utils.sh; reload_command {q};)
+alt-C:execute-silent(source ./run_utils.sh; toggle class prefix;)+reload(source ./run_utils.sh; reload_command {q};)
+alt-N:execute-silent(source ./run_utils.sh; toggle name prefix;)+reload(source ./run_utils.sh; reload_command {q};)
+alt-I:execute-silent(source ./run_utils.sh; toggle 'inherits?' prefix;)+reload(source ./run_utils.sh; reload_command {q};)
