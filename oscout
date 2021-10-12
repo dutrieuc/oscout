@@ -2,17 +2,14 @@
 source $HOME/.config/oscout/env_var.sh
 source $OSCOUT_INSTALL_PATH/env_var.sh
 source $HOME/.config/oscout/env_var.sh
-source $OSCOUT_INSTALL_PATH/utils.sh
+export R_UTILS=$OSCOUT_INSTALL_PATH/run_utils.sh
 source $OSCOUT_INSTALL_PATH/run_utils.sh
 
-binding_file=$(get_first_file ~/.config/oscout/bindings ./bindings)
+binding_file=$($OSCOUT_INSTALL_PATH/src/get_first_file "$HOME/.config/oscout/bindings" "${OSCOUT_INSTALL_PATH}/bindings")
+
 
 (echo $(get_header)) | fzf --phony --delimiter ':' --ansi \
     --header-lines=2  \
-    --bind "$(get_bindings $binding_file | envsubst)" \
-    --preview 'highlight_line={2} \
-        line_range_begin=$((line = highlight_line - (FZF_PREVIEW_LINES / 4) && line < 1 ? 1 : line)) \
-        line_range_end=$((line_range_begin + FZF_PREVIEW_LINES)) && \
-        bat --style=numbers --color=always --line-range "$line_range_begin:$line_range_end"\
-            --highlight-line {2} {1} 2> /dev/null' \
+    --bind "$($OSCOUT_INSTALL_PATH/src/get_bindings ${binding_file} | envsubst)" \
+    --preview '$OSCOUT_INSTALL_PATH/src/preview {1} {2}' \
     --prompt='(g)>'

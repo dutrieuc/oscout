@@ -1,0 +1,8 @@
+#!/bin/sh
+CONFIG_PATH="$HOME/.config/oscout"
+SCRIPT_PATH=$(readlink -f "$0")
+OSCOUT_INSTALL_PATH=$(dirname "$SCRIPT_PATH")
+echo $OSCOUT_INSTALL_PATH
+mkdir $CONFIG_PATH
+echo "export OSCOUT_INSTALL_PATH=$OSCOUT_INSTALL_PATH" >> "$CONFIG_PATH/env_var.sh"
+ln -sf "${OSCOUT_INSTALL_PATH}/oscout" "$HOME/.local/bin/oscout"

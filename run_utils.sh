@@ -1,7 +1,7 @@
 #!/bin/sh
 reload_command () {
     echo "$(get_header)";
-    echo "${OSCOUT_RG_PREFIX} $(get_type_filter) \"$(get_prefix_regex)${1}\" ${OSCOUT_PATHS} ${ARGS} || true";
+    #echo "${OSCOUT_RG_PREFIX} $(get_type_filter) \"$(get_prefix_regex)${1}\" ${OSCOUT_PATHS} ${ARGS} || true";
     eval "${OSCOUT_RG_PREFIX} $(get_type_filter) \"$(get_prefix_regex)${1}\" ${OSCOUT_PATHS} ${ARGS} || true";
 };
 

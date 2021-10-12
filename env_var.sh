@@ -1,4 +1,4 @@
-export OSCOUT_RG_PREFIX='rg --color=always --column --with-filename'
+export OSCOUT_RG_PREFIX='rg --color=always --column --with-filename --smart-case'
 export OSCOUT_PATH=''
 export OSCOUT_TMP=$(mktemp -d)
 export ARGS=$@

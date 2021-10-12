@@ -1,0 +1,8 @@
+#!/bin/sh
+for arg
+do
+    if [[ -f "$arg" ]]; then
+       echo "$arg"
+       exit
+    fi
+done
