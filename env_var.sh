@@ -5,3 +5,8 @@ export ARGS=$@
 
 export OSCOUT_EDITCMD='bat {1}  --pager="less +{2}"'
 #export OSCOUT_EDITCMD='subl {1}:{2}:{3} '
+
+if [[ -f $HOME/.config/oscout/env_var.sh ]]
+then
+    source $HOME/.config/oscout/env_var.sh
+fi

@@ -75,7 +75,7 @@ get_header () {
     echo "Looking for files : $OSCOUT_SEARCH_TYPES"
 };
 
-if [[ -f ~/.config/oscout/run_utils.sh ]]
+if [[ -f $HOME/.config/oscout/run_utils.sh ]]
 then
-    source ~/.config/oscout/run_utils.sh
+    source $HOME/.config/oscout/run_utils.sh
 fi

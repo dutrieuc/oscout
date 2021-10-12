@@ -1,7 +1,9 @@
 #!/bin/sh
-source ./utils.sh
-source ./run_utils.sh
-source ./env_var.sh
+source $HOME/.config/oscout/env_var.sh
+source $OSCOUT_INSTALL_PATH/env_var.sh
+source $HOME/.config/oscout/env_var.sh
+source $OSCOUT_INSTALL_PATH/utils.sh
+source $OSCOUT_INSTALL_PATH/run_utils.sh
 
 binding_file=$(get_first_file ~/.config/oscout/bindings ./bindings)
 
