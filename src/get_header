@@ -1,0 +1,5 @@
+#!/bin/sh
+OSCOUT_SEARCH_TYPES=$(retrieve "type")
+SEARCH_PREFIX=$(retrieve "prefix")
+echo "Matching : $(prefix_list ${SEARCH_PREFIX[@]})"
+echo "Looking for files : $OSCOUT_SEARCH_TYPES"

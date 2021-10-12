@@ -1,0 +1,8 @@
+#!/bin/sh
+SEARCH_PREFIX=($(retrieve "prefix"))
+if [[ ${#SEARCH_PREFIX[@]} -eq 0 ]]
+then
+    exit
+fi
+s="($(prefix_list ${SEARCH_PREFIX[@]} ))\s*=?\s*('|\\\")?"
+echo $s

@@ -1,10 +1,10 @@
 # FZF bound actions 
 enter:execute(${OSCOUT_EDITCMD})+accept
-change:reload(source ${R_UTILS}; reload_command {q};)
-alt-p:execute-silent(source ${R_UTILS}; toggle py type;)+reload(source ${R_UTILS}; reload_command {q};)
-alt-x:execute-silent(source ${R_UTILS}; toggle xml type;)+reload(source ${R_UTILS}; reload_command {q};)
-alt-j:execute-silent(source ${R_UTILS}; toggle js type;)+reload(source ${R_UTILS}; reload_command {q};)
-alt-D:execute-silent(source ${R_UTILS}; toggle def prefix;)+reload(source ${R_UTILS}; reload_command {q};)
-alt-C:execute-silent(source ${R_UTILS}; toggle class prefix;)+reload(source ${R_UTILS}; reload_command {q};)
-alt-N:execute-silent(source ${R_UTILS}; toggle name prefix;)+reload(source ${R_UTILS}; reload_command {q};)
-alt-I:execute-silent(source ${R_UTILS}; toggle 'inherits?' prefix;)+reload(source ${R_UTILS}; reload_command {q};)
+change:reload(reload_command {q};)
+alt-p:execute-silent(toggle py type;)+reload(reload_command {q};)
+alt-x:execute-silent(toggle xml type;)+reload(reload_command {q};)
+alt-j:execute-silent(toggle js type;)+reload(reload_command {q};)
+alt-D:execute-silent(toggle def prefix;)+reload(reload_command {q};)
+alt-C:execute-silent(toggle class prefix;)+reload(reload_command {q};)
+alt-N:execute-silent(toggle name prefix;)+reload(reload_command {q};)
+alt-I:execute-silent(toggle 'inherits?' prefix;)+reload(reload_command {q};)

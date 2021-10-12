@@ -1,0 +1,8 @@
+#!/bin/sh
+OSCOUT_SEARCH_TYPES=($(retrieve "type"))
+s=""
+for st in "${OSCOUT_SEARCH_TYPES[@]}"
+do
+    s+="-t$st "
+done
+echo $s

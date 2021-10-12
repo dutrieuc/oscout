@@ -1,0 +1,6 @@
+#!/bin/sh
+path="${OSCOUT_TMP}/${1}"
+if [[ -f $path ]]
+then
+    echo $(<$path)
+fi

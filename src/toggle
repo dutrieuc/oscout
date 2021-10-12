@@ -1,0 +1,19 @@
+#!/bin/sh
+new_ls=" "
+removed=0
+OSCOUT_SEARCH_TYPES=($(retrieve "$2"))
+for st in "${OSCOUT_SEARCH_TYPES[@]}"
+do
+    if [ "$st" = "$1" ]
+    then
+        removed=1
+    else
+        new_ls+="$st "
+    fi
+done
+if [[ $removed -eq 0 ]]
+then
+    new_ls+="$1 "
+fi
+echo "${new_ls}"
+store "${new_ls}" "$2"

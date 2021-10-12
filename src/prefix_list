@@ -1,0 +1,9 @@
+#!/bin/sh
+s=""
+sep=""
+for st in $@
+do
+    s+="$sep$st"
+    sep="|"
+done
+echo $s
