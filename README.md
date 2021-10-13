@@ -5,13 +5,18 @@
 [Installation]: #installation
 [Guide]: #guide
 
-Oscout is a small command line tool to explore Odoo source code. It uses ripgrep to recursively search the directory, fzf to select the matches and display a preview with bat
+Oscout is a small command line tool to explore Odoo source code. It uses ripgrep to recursively search the directory, fzf to select the matches and display a preview with bat.
+
+![showcase](showcase.png)
+
 ## Guide
 
 ### Use
 
 Run `oscout` in a directory.
-Type in your query.
+
+Type in your query. (Note: regular expression meta characters like .(){}*+ have to be escaped)
+
 Use shortcuts to refine the search
 - `<alt-p>`, `<alt-j>`, `<alt-x>` are going to filter for .py, .js, .xml files
 - `<alt-N>`, `<alt-I>`, `<alt-C>`, `<alt-D>` look for the query prefixed with `'name ='`, `'inherit ='`, `'class'`, `'def'` 
