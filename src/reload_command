@@ -1,4 +1,6 @@
 #!/bin/sh
 echo "$(get_header)";
-#echo "${OSCOUT_RG_PREFIX} $(get_type_filter) \"$(get_prefix_regex)${1}\" ${OSCOUT_PATHS} ${ARGS} || true";
-eval "${OSCOUT_RG_PREFIX} $(get_type_filter) \"$(get_prefix_regex)${1}\" ${OSCOUT_PATHS} ${ARGS} || true";
+eval "rg --column --with-filename ${OSCOUT_RG_OPTS} \
+        $(get_type_filter) \
+        \"$(get_prefix_regex)${1}\" \
+        ${ARGS} || true";

@@ -1,5 +1,5 @@
-# FZF bound actions 
-enter:execute(${OSCOUT_EDITCMD})+accept
+# FZF bound actions
+enter:execute(bat {1} --pager="less +{2}")+accept
 change:reload(reload_command {q};)
 alt-p:execute-silent(toggle py type;)+reload(reload_command {q};)
 alt-x:execute-silent(toggle xml type;)+reload(reload_command {q};)

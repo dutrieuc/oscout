@@ -1,5 +1,4 @@
 #!/bin/sh
-CONFIG_PATH="$HOME/.config/oscout"
 SCRIPT_PATH=$(readlink -f "$0")
 OSCOUT_INSTALL_PATH=$(dirname "$SCRIPT_PATH")
 ln -sf "${OSCOUT_INSTALL_PATH}/oscout" "$HOME/.local/bin/oscout"
