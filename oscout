@@ -5,10 +5,9 @@ export PATH="$OSCOUT_INSTALL_PATH/src:$PATH"
 source $OSCOUT_INSTALL_PATH/env_var.sh
 source $HOME/.config/oscout/env_var.sh
 
-binding_file=$(get_first_file "$HOME/.config/oscout/bindings" "${OSCOUT_INSTALL_PATH}/bindings")
-
 (echo $(get_header)) | fzf --phony --delimiter ':' --ansi \
     --header-lines=2 \
-    --bind "$(get_bindings ${binding_file})" \
+    --bind "$(get_bindings ${OSCOUT_INSTALL_PATH}/bindings)" \
+    --bind "$(get_bindings $HOME/.config/oscout/bindings)" \
     --preview 'preview {1} {2}' \
     --prompt='(g)>'
